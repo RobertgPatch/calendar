@@ -36,4 +36,9 @@ public class HomeController {
 		return "home";
 	}
 	
+	@RequestMapping(value="/signin", method=RequestMethod.GET)
+	public String signin(Model model) {
+		return "signin";
+	}
+	
 }

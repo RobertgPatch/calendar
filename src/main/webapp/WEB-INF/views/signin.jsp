@@ -16,13 +16,13 @@
 </div>
 <div id='body-content'>
 	<h1>
-		414Cal
+		414Cal Sign in
 	</h1>
-
-	<p>ICS414<br />
-	Fall 2013<br />
-	Kyle Mulleady<br />
-	Robert Patch</p>
+	<form action='<c:url value="/signin" />' method='post'>
+		<p><input type='text' name='username' placeholder='Username' /></p>
+		<p><input type='password' name='username' placeholder='Password' /></p>
+		<p><input type='submit' /></p>
+	</form>
 </div>
 </body>
 </html>
