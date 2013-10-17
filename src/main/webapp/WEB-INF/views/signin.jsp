@@ -4,6 +4,7 @@
 <head>
 	<title>Home</title>
 	<link rel='stylesheet' type='text/css' href='<c:url value="/resources/css/styles.css" />' />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div id='header-container'>
@@ -20,7 +21,7 @@
 	</h1>
 	<form action='<c:url value="/signin" />' method='post'>
 		<p><input type='text' name='username' placeholder='Username' /></p>
-		<p><input type='password' name='username' placeholder='Password' /></p>
+		<p><input type='password' name='password' placeholder='Password' /></p>
 		<p><input type='submit' /></p>
 	</form>
 </div>
