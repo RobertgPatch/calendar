@@ -18,6 +18,11 @@ public class User {
 		this.password = password.hashCode();
 		this.email    = email;
 	}
+	
+	public static User getUser(String username, String password) {
+		User user = null;
+		return user;
+	}
 
 	public String getUsername() { return this.username; }
 	public int getPassword() { return this.password; }

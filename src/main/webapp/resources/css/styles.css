@@ -37,11 +37,15 @@ a:hover, a:active {
 
 #header-content-right {
 	float: right;
-	margin-left: 200px;
 }
 
 #body-content {
 	padding: 15px;
 	width: 75%;
 	margin: 40px auto;
+}
+
+#error_message {
+	color: red;
+	font-size: 0.9em;
 }

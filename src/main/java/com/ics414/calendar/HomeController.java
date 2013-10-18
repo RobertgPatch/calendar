@@ -44,8 +44,13 @@ public class HomeController {
 	
 	@RequestMapping(value="/signin", method=RequestMethod.POST)
 	public String signin(@RequestParam(value="username") String username,
-						 @RequestParam(value="password") String password) {
-		User user = new User(username, password);
+						 @RequestParam(value="password") String password,
+						 Model model) {
+		User user = User.getUser(username, password);
+		if (user == null) {
+			model.addAttribute("error_message", "Invalid username/password.");
+			return "signin";
+		}
 		return "redirect:/";
 	}
 	

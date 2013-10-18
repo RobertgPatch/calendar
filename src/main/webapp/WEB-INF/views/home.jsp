@@ -5,6 +5,7 @@
 	<title>Home</title>
 	<link rel='stylesheet' type='text/css' href='<c:url value="/resources/css/styles.css" />' />
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <body>
 <div id='header-container'>
