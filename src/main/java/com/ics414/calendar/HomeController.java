@@ -1,7 +1,8 @@
 package com.ics414.calendar;
 
+import java.util.Calendar;
 import java.text.DateFormat;
-import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.Locale;
 
 import org.slf4j.Logger;
@@ -26,14 +27,24 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
-		
+		/*
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
 		String formattedDate = dateFormat.format(date);
-		
 		model.addAttribute("serverTime", formattedDate );
+		*/
+		Calendar cal = Calendar.getInstance();
+		DateFormat fmt = new SimpleDateFormat("MMMMM");
+		String month = fmt.format(cal.getTime());
+		model.addAttribute("month", month);
+		cal.set(Calendar.HOUR_OF_DAY, 0);
+		cal.clear(Calendar.MINUTE);
+		cal.clear(Calendar.SECOND);
+		cal.clear(Calendar.MILLISECOND);
+		cal.set(Calendar.DAY_OF_WEEK, cal.getFirstDayOfWeek());
+		cal.add(Calendar.WEEK_OF_YEAR, 1);
 		
+		model.addAttribute("days", new int[1]);
 		return "home";
 	}
 	

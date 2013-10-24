@@ -26,6 +26,22 @@
 		Kyle Mulleady<br />
 		Robert Patch
 	</p>
+	<div id='cal-container'>
+	   <div id='cal-header'>
+	       ${month}
+	   </div>
+	   <div id='cal-content'>
+	       <div class='month'>
+	         <c:forTokens items="1,2,3,4,5,6" delims="," var="week">
+               <div class='week'>
+                 <c:forEach var="i" begin="1" end="7">
+                   <div class='day'><c:out value="${i}"/></div>
+                 </c:forEach>
+               </div>
+             </c:forTokens>
+	       </div>
+	   </div>
+	</div>
 </div>
 </body>
 </html>
