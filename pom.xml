@@ -14,20 +14,22 @@
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
 	<dependencies>
-	    <!--  Persistence -->
+	    <!-- 
+	    JPA
 	    <dependency>
             <groupId>javax.persistence</groupId>
             <artifactId>persistence-api</artifactId>
             <version>1.0</version>
         </dependency>
         
-        <!--  Hibernate -->
+        Hibernate
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>3.3.2.GA</version>
         </dependency>
-        
+        -->
+         
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -61,12 +63,13 @@
             <artifactId>spring-jdbc</artifactId>
             <version>${org.springframework.version}</version>
         </dependency>
+        <!-- 
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
             <version>${org.springframework-version}</version>
         </dependency>
-				
+	    -->	
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
