@@ -4,8 +4,16 @@
 <head>
     <title>Home</title>
     <link rel='stylesheet' type='text/css' href='<c:url value="/resources/css/styles.css" />' />
+    <link rel='stylesheet' type='text/css' href='<c:url value="/resources/css/jquery-ui-1.10.3.custom.min.css" />' />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src='<c:url value="/resources/js/jquery-ui-1.10.3.custom.min.js" />'></script>
+    <script>
+    $(function() {
+      $("#dateStart").datepicker();
+      $("#dateEnd").datepicker();
+    });
+    </script>
 </head>
 <body>
 <div id='header-container'>
@@ -18,7 +26,7 @@
 </div>
 <div id='body-content'>
     <h1>
-        414Cal
+        414Cal Event Creator
     </h1>
     <c:if test="${!empty username}">
         ${username = "User"}
@@ -26,22 +34,14 @@
     <h3>
         ${username}
     </h3>
-    <div id='cal-container'>
-       <div id='cal-header'>
-           ${month}
-       </div>
-       <div id='cal-content'>
-           <div class='month'>
-             <c:forTokens items="1,2,3,4,5,6" delims="," var="week">
-               <div class='week'>
-                 <c:forEach var="i" begin="1" end="7">
-                   <div class='day'><c:out value="${i}"/></div>
-                 </c:forEach>
-               </div>
-             </c:forTokens>
-           </div>
-       </div>
-    </div>
+    <form action='createEvent' method='post'>
+        <p><input type='text' name='eventTitle' size='58' placeholder='Title' /></p>
+        <p><input type='text' name='eventLocation' size='58' placeholder='Location' /></p>
+        <p><textarea name='eventDescription' rows='5' cols='42' placeholder='Description'></textarea></p>
+        <p>From <input type='text' name='dateStart' id='dateStart' /> to <input type='text' name='dateEnd' id='dateEnd' /></p>
+        <p><input type='checkbox' name='allDay'> All day</p>
+        <p><input type='checkbox' name='repeat' id='repeat'> Repeat</p> 
+    </form>
 </div>
 </body>
 </html>

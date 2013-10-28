@@ -1,22 +1,27 @@
 package com.ics414.calendar;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="USER")
 public class User {
 	
-	private String username;
-	private int password;
+	@Id
+	@Column(name="USER_ID", nullable=false)
+    @GeneratedValue(strategy=GenerationType.AUTO)
+	private long userId;
+	
+	@Column(name="EMAIL", nullable=false, length=100)
 	private String email;
+	
+	@Column(name="PASSWORD", nullable=false)
+	private int password;
 	
 	public User() {	}
 	
-	public User(String username, String password) {
-		this.username = username;
+	public User(String email, String password) {
+		this.email = email;
 		this.password = password.hashCode();
-	}
-	
-	public User(String username, String password, String email) {
-		this.username = username;
-		this.password = password.hashCode();
-		this.email    = email;
 	}
 	
 	public static User getUser(String username, String password) {
@@ -24,10 +29,8 @@ public class User {
 		return user;
 	}
 
-	public String getUsername() { return this.username; }
 	public int getPassword() { return this.password; }
-	public String getEmail()    { return this.email; }
-	public void setUsername(String username) { this.username = username; }	
+	public String getEmail()    { return this.email; }	
 	public void setPassword(String password) { this.password = password.hashCode(); }	
 	public void setEmail(String email)       { this.email = email; }
 }

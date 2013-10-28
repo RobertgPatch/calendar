@@ -11,11 +11,11 @@ import org.springframework.ui.Model;
 public class HomeControllerTest {
 
 	@Test
-	public void testHome() {
+	public void testIndex() {
 		Locale locale = Locale.US;
 		Model model = new ExtendedModelMap();
 		HomeController hc = new HomeController();
-		assertEquals(hc.home(locale, model), "home");
+		assertEquals(hc.index(locale, model), "index");
 	}
 
 	@Test
